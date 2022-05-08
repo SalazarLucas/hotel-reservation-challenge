@@ -1,0 +1,4 @@
+hotel_name,weekday,weekend,discounted_weekday,discounted_weekend
+Lakewood,110.0,90.0,80.0,80.0
+Bridgewood,160.0,60.0,110.0,50.0
+Ridgewood,220.0,150.0,100.0,40.0
