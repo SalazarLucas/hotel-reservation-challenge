@@ -10,7 +10,7 @@ class Hotel:
     
     def get_costs(self, client):
         """
-        Calculates the stay costs for a hotel object.
+        Calculates the stay costs for a client.
         client: object of type Client()
         returns: float
         """
@@ -35,25 +35,6 @@ class Hotel:
     
         total_costs = weekday_costs + weekend_costs
         return total_costs
-    
-    class Objects:
-        @staticmethod
-        def all():
-            """
-            Retrieves a list of Hotel objects stored in a CSV file.
-            returns: list of Hotel() objects
-            """
-            hotel_objects = []
-
-            with open("src/tables/hotels.csv", "r") as csvfile:
-                reader = csv.DictReader(csvfile)
-                for row in reader:
-                    name = row["name"]
-                    classification = int(row["classification"])
-                    hotel_object = Hotel(name, classification)
-                    hotel_objects.append(hotel_object)
-
-            return hotel_objects
 
 
 class Price:

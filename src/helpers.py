@@ -1,4 +1,6 @@
 from datetime import datetime
+from .models import Hotel
+import csv
 
 
 def parse_client_data(client_data_input):
@@ -17,3 +19,21 @@ def parse_client_data(client_data_input):
         "stay_dates": formatted_date_strings
     }
     return client_data
+
+
+def get_all_hotels():
+    """
+    Retrieves and instantiates all hotels from csv file.
+    Returns: list of Hotel() objects
+    """
+    hotel_objects = []
+
+    with open("src/tables/hotels.csv", "r") as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            name = row["name"]
+            classification = int(row["classification"])
+            hotel_object = Hotel(name, classification)
+            hotel_objects.append(hotel_object)
+
+    return hotel_objects
